@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>{{titulo}}</h1>
+
+    <form>
+        <div class="form-group">
+          <label class="form-label">Fecha Actual</label>
+          <h4>{{orden.fechaOrden | date:'dd/MM/yyyy'}}</h4>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cliente">Cliente</label>
+          <select class="form-select" name="cliente" [(ngModel)]="idCliente">
+            <option [value]="cliente.idCliente"  *ngFor="let cliente of clientes">
+                {{cliente.nombreCliente + " " +cliente.apellidoCliente}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="articulo">Articulo(Seleccione los que desee)</label>
+            <select class="form-select" multiple name="articulo" [(ngModel)]="articulosSel">
+              <option [value]="articulo" *ngFor="let articulo of articulos">
+                {{articulo.codigoArticulo + ": " + articulo.nombreArticulo + " --> " + articulo.precioArticulo + '$'}}
+              </option>
+            </select>
+          </div>
+
+          <button class="btn btn-success" style="margin-top: 20px;" role="button" (click)='guardar()'>Guardar</button>
+    </form>
+</div>

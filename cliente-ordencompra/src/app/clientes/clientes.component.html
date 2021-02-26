@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>{{titulo}}</h1>
+
+  <button role="button" class="btn btn-info" [routerLink]="['/clientes/formulario']">Nuevo</button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <th scope="row">{{cliente.idCliente}}</th>
+        <td>{{cliente.nombreCliente}}</td>
+        <td>{{cliente.apellidoCliente}}</td>
+        <td><button role="button" class="btn btn-primary" [routerLink]="['/clientes/formulario', cliente.idCliente]">Editar</button></td>
+        <td><button role="button" class="btn btn-danger" (click)="eliminar(cliente)">Eliminar</button></td>
+      </tr>      
+    </tbody>
+  </table>
+</div>

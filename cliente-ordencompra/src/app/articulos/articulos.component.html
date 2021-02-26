@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>{{titulo}}</h1>
+  
+    <button role="button" class="btn btn-info" [routerLink]="['/articulos/formulario']">Nuevo</button>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Codigo</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let articulo of articulos">
+          <th scope="row">{{articulo.codigoArticulo}}</th>
+          <td>{{articulo.nombreArticulo}}</td>
+          <td>{{articulo.precioArticulo}}</td>          
+        </tr>      
+      </tbody>
+    </table>
+  </div>
