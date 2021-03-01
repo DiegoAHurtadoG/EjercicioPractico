@@ -19,9 +19,10 @@
           <td>{{orden.cliente.nombreCliente + " " + orden.cliente.apellidoCliente}}</td>
           <td>
             <div *ngFor="let ordenArt of orden.ordenArticulos">
-                {{ordenArt.articulo.codigoArticulo + ": " + ordenArt.articulo.nombreArticulo + " --> " + ordenArt.articulo.precioArticulo + '$'}}
+                {{ordenArt.articulo.codigoArticulo + ": " 
+                + ordenArt.articulo.nombreArticulo + " --> " + ordenArt.articulo.precioArticulo + '$'}}
             </div>
-          </td>          
+          </td>
         </tr>      
       </tbody>
     </table>

@@ -1,5 +1,6 @@
 package com.ejercicio.api.ordencompra.model;
 
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -13,15 +14,11 @@ public class OrdenArticulo {
 	@EmbeddedId
 	private OrdenArticuloPK ordenArticuloPK;
 
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "idOrden", insertable = false, updatable = false)
-////	@MapsId("idOrden")
-//	private Orden orden;
-
 	@ManyToOne
-//	@MapsId("codigoArticulo")
 	@JoinColumn(name = "codigoArticulo", insertable = false, updatable = false)
 	private Articulo articulo;
+
+	private Integer cantidadArticulo;
 
 	public OrdenArticulo() {
 		super();
@@ -43,9 +40,18 @@ public class OrdenArticulo {
 		this.articulo = articulo;
 	}
 
+	public Integer getCantidadArticulo() {
+		return cantidadArticulo;
+	}
+
+	public void setCantidadArticulo(Integer cantidadArticulo) {
+		this.cantidadArticulo = cantidadArticulo;
+	}
+
 	@Override
 	public String toString() {
-		return "OrdenArticulo [ordenArticuloPK=" + ordenArticuloPK + ", articulo=" + articulo + "]";
+		return "OrdenArticulo [ordenArticuloPK=" + ordenArticuloPK + ", articulo=" + articulo + ", cantidadArticulo="
+				+ cantidadArticulo + "]";
 	}
 
 }

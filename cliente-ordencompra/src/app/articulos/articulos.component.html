@@ -9,13 +9,15 @@
           <th scope="col">Codigo</th>
           <th scope="col">Nombre</th>
           <th scope="col">Precio</th>
+          <th scope="col">Stock</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let articulo of articulos">
           <th scope="row">{{articulo.codigoArticulo}}</th>
           <td>{{articulo.nombreArticulo}}</td>
-          <td>{{articulo.precioArticulo}}</td>          
+          <td>{{articulo.precioArticulo}}</td>   
+          <td>{{articulo.stockArticulo}}</td>          
         </tr>      
       </tbody>
     </table>

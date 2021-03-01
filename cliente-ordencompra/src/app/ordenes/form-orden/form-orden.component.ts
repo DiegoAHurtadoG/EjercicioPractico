@@ -22,13 +22,14 @@ export class FormOrdenComponent implements OnInit {
   articulosSel:Articulo[];
   articulos:Articulo[];
   ordenArticulos:OrdenArticulos[];
+  cantidadArticulo:number;
   
 
   constructor(private ordenService:OrdenService, private router:Router, 
     private clienteService:ClienteService, private articuloService:ArticuloService) { }
 
   guardar():void{
-    this.ordenService.guardar(this.orden,this.idCliente,this.articulosSel).subscribe(
+    this.ordenService.guardar(this.orden,this.idCliente,this.articulosSel,this.cantidadArticulo).subscribe(
       e=>this.router.navigate(['/ordenes/'])
     )
   }

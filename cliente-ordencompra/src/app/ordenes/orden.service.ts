@@ -25,14 +25,15 @@ export class OrdenService {
     return this.http.get<Orden>(this.url+'/'+id);
   }
 
-  guardar(orden:Orden, idCliente:number, articulos:Articulo[]):Observable<Orden>{
+  guardar(orden:Orden, idCliente:number, articulos:Articulo[], cantidad:number):Observable<Orden>{
     orden.cliente= new Cliente();
     orden.ordenArticulos=[];
     orden.cliente.idCliente=idCliente;
     for (let i = 0; i < articulos.length; i++) {
       orden.ordenArticulos[i] = new OrdenArticulos;
       orden.ordenArticulos[i].articulo=articulos[i];
-    }    
+      orden.ordenArticulos[i].cantidadArticulo = cantidad;
+    }
     return this.http.post<Orden>(this.url,orden);
   }
 }

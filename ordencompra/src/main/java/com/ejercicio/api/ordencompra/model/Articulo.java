@@ -1,5 +1,6 @@
 package com.ejercicio.api.ordencompra.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,6 +13,7 @@ public class Articulo {
 	private String codigoArticulo;
 	private String nombreArticulo;
 	private Float precioArticulo;
+	private Integer stockArticulo;
 
 	public Articulo() {
 		super();
@@ -41,10 +43,18 @@ public class Articulo {
 		this.precioArticulo = precioArticulo;
 	}
 
+	public Integer getStockArticulo() {
+		return stockArticulo;
+	}
+
+	public void setStockArticulo(Integer stockArticulo) {
+		this.stockArticulo = stockArticulo;
+	}
+
 	@Override
 	public String toString() {
 		return "Articulo [codigoArticulo=" + codigoArticulo + ", nombreArticulo=" + nombreArticulo + ", precioArticulo="
-				+ precioArticulo + "]";
+				+ precioArticulo + ", stockArticulo=" + stockArticulo + "]";
 	}
 
 }
